@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Curso de Design e Corte de Topos de Bolo - Napau design & arte</title>
+  <meta name="description" content="Curso de design e corte de topos de bolo. Aprenda a criar topos personalizados com orientação prática.">
+  <meta name="theme-color" content="#A68A64">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- CSS Original do Projeto -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== ESTILOS EXCLUSIVOS PARA CURSOS (SEM CONFLITOS) ===== */
+    
+    /* Hero do Curso - usando as cores do root */
+    .curso-hero {
+      background: linear-gradient(135deg, var(--cor-principal, #A68A64) 0%, var(--cor-destaque, #D9A05B) 100%);
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .curso-hero h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      font-weight: normal;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .curso-hero p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .curso-hero i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sobre o Curso */
+    .sobre-curso {
+      padding: 60px 20px;
+      background: white;
+    }
+
+    .sobre-curso h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: var(--cor-principal, #A68A64);
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: normal;
+    }
+
+    .sobre-curso > p {
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: var(--cor-secundaria, #F2E8DC);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .info-box i {
+      font-size: 2.5rem;
+      color: var(--cor-destaque, #D9A05B);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .info-box p {
+      font-family: 'Raleway', sans-serif;
+      color: var(--cor-texto, #333);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      color: var(--cor-principal, #A68A64);
+    }
+
+    /* WhatsApp Contact Button */
+    .whatsapp-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-contact:hover {
+      background: #1da851;
+      transform: scale(1.02);
+      color: white;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 60px 20px;
+      background: var(--cor-secundaria, #F2E8DC);
+    }
+
+    .faq-section h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: var(--cor-principal, #A68A64);
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: normal;
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .faq-question {
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      color: var(--cor-texto, #333);
+    }
+
+    .faq-question i:first-child {
+      color: var(--cor-destaque, #D9A05B);
+      margin-right: 12px;
+    }
+
+    .faq-question span {
+      flex: 1;
+    }
+
+    .faq-question i:last-child {
+      transition: transform 0.3s ease;
+      color: #999;
+    }
+
+    .faq-item.active .faq-question i:last-child {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 20px 20px;
+      max-height: 200px;
+    }
+
+    /* Toast personalizado (não conflita) */
+    .toast-custom {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cor-principal, #A68A64);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      z-index: 2001;
+      animation: fadeUp 0.3s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    /* Responsivo */
+    @media (min-width: 768px) {
+      .curso-hero h2 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <h1>Napau design & arte</h1>
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+        <li><a href="portfolio.html"><i class="fa-solid fa-grid-2"></i> Portfólio</a></li>
+        <li><a href="cursos.html"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+        <li><a href="index.html#sobre"><i class="fa-solid fa-heart"></i> Sobre</a></li>
+        <li><a href="index.html#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <div class="carrinha" id="cart-icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="carrinha-contagem">0</span>
+      </div>
+      <div class="mobile-menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="curso-hero">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h2>Curso de Design e Corte de Topos de Bolo</h2>
+      <p>Aprenda a criar topos de bolo personalizados do zero</p>
+    </section>
+
+    <section class="sobre-curso">
+      <div class="container">
+        <h3>Sobre o Curso</h3>
+        <p>Para mais informações sobre o curso, pré-requisitos, valores e próximas turmas, entre em contacto connosco pelo WhatsApp.</p>
+        
+        <div class="info-box">
+          <i class="fa-regular fa-message"></i>
+          <p><strong>Informações sob consulta</strong><br>
+          Valores, duração, módulos e datas das próximas turmas são informados mediante contacto.</p>
+          <a href="https://wa.me/258867915871?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20curso%20de%20topos%20de%20bolo" target="_blank" class="whatsapp-contact">
+            <i class="fa-brands fa-whatsapp"></i> Falar com o Instrutor
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h3>Dúvidas Frequentes</h3>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <i class="fa-regular fa-circle-question"></i>
+              <span>Como posso saber mais sobre o curso?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Entre em contacto connosco pelo WhatsApp que teremos todo o prazer em esclarecer suas dúvidas sobre conteúdo, valores e disponibilidade.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <i class="fa-regular fa-circle-question"></i>
+              <span>Preciso ter experiência prévia?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Entre em contacto para saber os pré-requisitos e se o curso é adequado para o seu nível de conhecimento.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <i class="fa-regular fa-circle-question"></i>
+              <span>Quando abre a próxima turma?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              As datas das próximas turmas são divulgadas mediante procura. Fale connosco para saber quando abrirá a próxima turma.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <i class="fa-regular fa-circle-question"></i>
+              <span>O curso é presencial ou online?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Entre em contacto para saber o formato do curso e como funciona o acompanhamento.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://instagram.com/napau_design" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com/napaudesign" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://wa.me/258867915871" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2026 Napau design & arte. Todos os direitos reservados.</p>
+    <p class="developer-credit"><i class="fa-solid fa-code"></i> Desenvolvido por CodWorks Moz</p>
+  </footer>
+
+  <!-- WhatsApp Float (usando classe do style.css) -->
+  <a href="https://wa.me/258867915871?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20curso%20de%20topos%20de%20bolo" class="floating-whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Fale Connosco</span>
+  </a>
+
+  <!-- Cart Modal (usando classes do style.css) -->
+  <div id="carrinha-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal-btn">&times;</span>
+      <h2>Carrinha de Compras</h2>
+      <div id="carrinha-container">
+        <div style="text-align: center; padding: 30px;">
+          <i class="fa-solid fa-bag-shopping" style="font-size: 3rem; color: #ccc;"></i>
+          <p style="margin-top: 10px; font-family: 'Raleway', sans-serif;">Sua carrinha está vazia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinha.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // ===== MENU MOBILE =====
+      const menuIcon = document.querySelector('.mobile-menu-icon');
+      const mainNav = document.querySelector('.main-nav');
+      if (menuIcon && mainNav) {
+        menuIcon.addEventListener('click', function() {
+          mainNav.classList.toggle('active');
+          const icon = menuIcon.querySelector('i');
+          if (mainNav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      }
+
+      // Fechar menu ao clicar em link
+      document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('active');
+          if (menuIcon) {
+            const icon = menuIcon.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      });
+
+      // ===== INICIALIZAR CARRINHA =====
+      if (typeof carrinha !== 'undefined') {
+        carrinha.init();
+        if (carrinha.atualizarContagem) carrinha.atualizarContagem();
+      }
+
+      // ===== FAQ ACCORDION =====
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+
+      // ===== MODAL CARRINHO (usando classes do style.css) =====
+      const cartModal = document.getElementById('carrinha-modal');
+      const cartIconBtn = document.getElementById('cart-icon');
+      const closeModalBtn = document.querySelector('#carrinha-modal .close-modal-btn');
+      
+      if (cartIconBtn && cartModal) {
+        cartIconBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          cartModal.style.display = 'block';
+          if (typeof carrinha !== 'undefined' && carrinha.renderizarCarrinha) {
+            carrinha.renderizarCarrinha();
+          }
+        });
+        
+        if (closeModalBtn) {
+          closeModalBtn.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+          });
+        }
+        
+        window.addEventListener('click', (e) => {
+          if (e.target === cartModal) {
+            cartModal.style.display = 'none';
+          }
+        });
+      }
+
+      // ===== TOAST FUNCTION =====
+      function showToast(message) {
+        let toast = document.querySelector('.toast-custom');
+        if (toast) toast.remove();
+        toast = document.createElement('div');
+        toast.className = 'toast-custom';
+        toast.innerHTML = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+      }
+
+      console.log('✅ Página de cursos inicializada');
+    });
+  </script>
+</body>
+</html>

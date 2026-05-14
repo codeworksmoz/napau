@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Portfólio | Napau design & arte - Topos de Bolo Personalizados</title>
+  <meta name="description" content="Explore o portfólio de topos de bolo personalizados da Napau design & arte. Designs exclusivos para aniversários, casamentos e eventos especiais.">
+  <meta name="keywords" content="portfólio, topos de bolo, design, aniversário, casamento, Moçambique">
+  <meta name="theme-color" content="#A68A64">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- CSS Original do Projeto -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== ESTILOS EXCLUSIVOS PARA PORTFÓLIO ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf8f5;
+      padding-top: 70px;
+    }
+
+    /* Header */
+    header {
+      background: var(--cor-clara, #FFFFFF);
+      height: 70px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      font-weight: normal;
+      color: var(--cor-principal, #A68A64);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .logo a {
+      text-decoration: none;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .carrinha {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .carrinha i {
+      font-size: 1.4rem;
+      color: var(--cor-texto, #333);
+    }
+
+    #carrinha-contagem {
+      position: absolute;
+      top: -10px;
+      right: -12px;
+      background: var(--cor-destaque, #D9A05B);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+    }
+
+    .mobile-menu-icon {
+      cursor: pointer;
+    }
+
+    .mobile-menu-icon i {
+      font-size: 1.4rem;
+      color: var(--cor-texto, #333);
+    }
+
+    /* Menu Mobile */
+    .main-nav {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: var(--cor-clara, #FFFFFF);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .main-nav.active {
+      transform: translateX(0);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .main-nav li a {
+      display: block;
+      padding: 12px 0;
+      text-decoration: none;
+      color: var(--cor-texto, #333);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(166, 138, 100, 0.2);
+    }
+
+    .main-nav li a i {
+      margin-right: 10px;
+      width: 20px;
+    }
+
+    .main-nav li a:hover {
+      color: var(--cor-destaque, #D9A05B);
+    }
+
+    /* Hero do Portfólio */
+    .portfolio-hero {
+      background: linear-gradient(135deg, var(--cor-principal, #A68A64) 0%, var(--cor-destaque, #D9A05B) 100%);
+      padding: 50px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .portfolio-hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      font-weight: normal;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .portfolio-hero p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background: white;
+      padding: 16px;
+      position: sticky;
+      top: 70px;
+      z-index: 99;
+      border-bottom: 1px solid rgba(166, 138, 100, 0.15);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      margin-right: 10px;
+      background: #f5f2ef;
+      border: none;
+      border-radius: 40px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn i {
+      font-size: 0.85rem;
+    }
+
+    .filter-btn.active {
+      background: var(--cor-destaque, #D9A05B);
+      color: white;
+    }
+
+    .filter-btn:hover:not(.active) {
+      background: rgba(217, 160, 91, 0.2);
+      color: var(--cor-destaque, #D9A05B);
+    }
+
+    /* Products Grid */
+    .portfolio-container {
+      padding: 30px 16px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(166, 138, 100, 0.15);
+    }
+
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .image-overlay {
+      opacity: 1;
+    }
+
+    .view-image-btn {
+      width: 45px;
+      height: 45px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--cor-destaque, #D9A05B);
+    }
+
+    .view-image-btn i {
+      font-size: 1.2rem;
+    }
+
+    .view-image-btn:hover {
+      background: var(--cor-destaque, #D9A05B);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .product-info {
+      padding: 12px;
+    }
+
+    .product-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cor-texto, #333);
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .product-price {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cor-destaque, #D9A05B);
+      margin-bottom: 10px;
+    }
+
+    .add-cart-btn {
+      width: 100%;
+      background: var(--cor-principal, #A68A64);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 25px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .add-cart-btn i {
+      font-size: 0.7rem;
+    }
+
+    .add-cart-btn:hover {
+      background: var(--cor-destaque, #D9A05B);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 3rem;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .empty-state p {
+      font-family: 'Raleway', sans-serif;
+      color: #999;
+    }
+
+    /* Modal Carrinho */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 24px;
+      padding: 20px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(166, 138, 100, 0.2);
+    }
+
+    .modal-header h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cor-principal, #A68A64);
+    }
+
+    .modal-header h2 i {
+      margin-right: 8px;
+    }
+
+    .close-modal {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #999;
+    }
+
+    /* Image Modal */
+    .image-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-modal.active {
+      display: flex;
+    }
+
+    .modal-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .close-modal-image {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 2001;
+      transition: color 0.3s ease;
+    }
+
+    .close-modal-image:hover {
+      color: var(--cor-destaque, #D9A05B);
+    }
+
+    .modal-content-image {
+      max-width: 90%;
+      max-height: 80%;
+      object-fit: contain;
+      border-radius: 12px;
+      z-index: 2001;
+    }
+
+    .image-modal-info {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      padding: 15px 25px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 2001;
+    }
+
+    .image-modal-title {
+      color: white;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .image-modal-price {
+      color: var(--cor-destaque, #D9A05B);
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .modal-add-to-cart-btn {
+      background: var(--cor-destaque, #D9A05B);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .modal-add-to-cart-btn i {
+      font-size: 1rem;
+    }
+
+    .modal-add-to-cart-btn:hover {
+      background: #c2893b;
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--cor-texto, #333);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-social {
+      margin-bottom: 20px;
+    }
+
+    .footer-social a {
+      color: white;
+      margin: 0 12px;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--cor-destaque, #D9A05B);
+    }
+
+    footer p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin: 5px 0;
+    }
+
+    .developer-credit {
+      font-size: 0.7rem;
+      opacity: 0.5;
+    }
+
+    .developer-credit i {
+      margin-right: 4px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cor-principal, #A68A64);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      z-index: 2001;
+      animation: fadeUp 0.3s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      z-index: 100;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:active {
+      transform: scale(0.95);
+    }
+
+    .whatsapp-float i {
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      grid-column: 1 / -1;
+    }
+
+    .loading i {
+      font-size: 2rem;
+      color: var(--cor-destaque, #D9A05B);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+      .mobile-menu-icon {
+        display: none;
+      }
+      
+      .main-nav {
+        position: static;
+        transform: translateX(0);
+        background: none;
+        box-shadow: none;
+      }
+      
+      .main-nav ul {
+        display: flex;
+        padding: 0;
+        gap: 30px;
+      }
+      
+      .main-nav li a {
+        border-bottom: none;
+        padding: 0;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .portfolio-hero h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <h1>Napau design & arte</h1>
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+        <li><a href="portfolio.html"><i class="fa-solid fa-grid-2"></i> Portfólio</a></li>
+        <li><a href="cursos.html"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+        <li><a href="index.html#sobre"><i class="fa-solid fa-heart"></i> Sobre</a></li>
+        <li><a href="index.html#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <div class="carrinha" id="cart-icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="carrinha-contagem">0</span>
+      </div>
+      <div class="mobile-menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="portfolio-hero">
+      <h1>Nosso Portfólio</h1>
+      <p><i class="fa-regular fa-compass"></i> Explore nossa coleção de topos de bolo personalizados</p>
+    </section>
+
+    <div class="filter-bar" id="filter-bar"></div>
+
+    <div class="portfolio-container">
+      <div class="products-grid" id="portfolio-grid">
+        <div class="loading">
+          <i class="fa-solid fa-spinner"></i>
+          <p>Carregando produtos...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://instagram.com/napau_design" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com/napaudesign" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://wa.me/258867915871" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2026 Napau design & arte. Todos os direitos reservados.</p>
+    <p class="developer-credit"><i class="fa-solid fa-code"></i> Desenvolvido por CodWorks Moz</p>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/258867915871?text=Olá!%20Gostaria%20de%20fazer%20uma%20encomenda%20de%20topos%20de%20bolo" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-bag-shopping"></i> Minha Carrinha</h2>
+        <span class="close-modal" id="close-modal">&times;</span>
+      </div>
+      <div id="carrinha-container">
+        <div style="text-align: center; padding: 30px;">
+          <i class="fa-solid fa-bag-shopping" style="font-size: 3rem; color: #ccc;"></i>
+          <p style="margin-top: 10px; font-family: 'Raleway', sans-serif;">Sua carrinha está vazia</p>
+          <a href="#portfolio-grid" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--cor-destaque); color: white; border-radius: 25px; text-decoration: none; font-family: 'Raleway', sans-serif; font-size: 0.8rem;"><i class="fa-solid fa-store"></i> Ver produtos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="image-modal">
+    <div class="modal-background"></div>
+    <span class="close-modal-image"><i class="fa-solid fa-xmark"></i></span>
+    <img id="modal-image" class="modal-content-image" src="" alt="Imagem ampliada">
+    <div id="image-modal-info" class="image-modal-info">
+      <div id="image-modal-title" class="image-modal-title"></div>
+      <div id="image-modal-price" class="image-modal-price"></div>
+      <button id="modal-add-to-cart" class="modal-add-to-cart-btn" title="Adicionar à Carrinha">
+        <i class="fa-solid fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinha.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // ===== MENU MOBILE =====
+      const menuIcon = document.querySelector('.mobile-menu-icon');
+      const mainNav = document.querySelector('.main-nav');
+      if (menuIcon && mainNav) {
+        menuIcon.addEventListener('click', function() {
+          mainNav.classList.toggle('active');
+          const icon = menuIcon.querySelector('i');
+          if (mainNav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      }
+
+      document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('active');
+          if (menuIcon) {
+            const icon = menuIcon.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      });
+
+      // ===== INICIALIZAR CARRINHA =====
+      if (typeof carrinha !== 'undefined') {
+        carrinha.init();
+        if (carrinha.atualizarContagem) carrinha.atualizarContagem();
+      }
+
+      // ===== CATEGORIAS =====
+      const categorias = [
+        { id: 'todos', nome: 'Todos', icone: 'fa-solid fa-grid-2' },
+        { id: 'aniversario', nome: 'Aniversário', icone: 'fa-solid fa-cake-candles' },
+        { id: 'casamento', nome: 'Casamento', icone: 'fa-solid fa-ring' },
+        { id: 'baptismo', nome: 'Baptismo', icone: 'fa-solid fa-dove' },
+        { id: 'natal', nome: 'Natal', icone: 'fa-solid fa-tree' },
+        { id: 'pascoa', nome: 'Páscoa', icone: 'fa-solid fa-egg' },
+        { id: 'graduacao', nome: 'Graduação', icone: 'fa-solid fa-graduation-cap' },
+        { id: 'anoNovo', nome: 'Ano Novo', icone: 'fa-solid fa-calendar-star' },
+        { id: 'diadascriancas', nome: 'Dia das Crianças', icone: 'fa-solid fa-child' },
+        { id: 'eidmubarak', nome: 'Eid Mubarak', icone: 'fa-solid fa-moon' }
+      ];
+
+      // ===== RENDER FILTERS =====
+      const filterBar = document.getElementById('filter-bar');
+      let activeCategory = 'todos';
+
+      function renderFilters() {
+        if (!filterBar) return;
+        filterBar.innerHTML = categorias.map(cat => `
+          <button class="filter-btn ${activeCategory === cat.id ? 'active' : ''}" data-category="${cat.id}">
+            <i class="${cat.icone}"></i> ${cat.nome}
+          </button>
+        `).join('');
+
+        // Add filter event listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            activeCategory = btn.dataset.category;
+            renderFilters();
+            renderProducts();
+          });
+        });
+      }
+
+      // ===== RENDER PRODUCTS =====
+      const portfolioGrid = document.getElementById('portfolio-grid');
+
+      function renderProducts() {
+        if (!portfolioGrid || typeof portfolioCompleto === 'undefined') return;
+
+        let filteredProducts = activeCategory === 'todos' 
+          ? portfolioCompleto 
+          : portfolioCompleto.filter(p => p.categoria === activeCategory);
+
+        // Filtrar produtos com imagem válida
+        filteredProducts = filteredProducts.filter(p => p.imagem && p.imagem.trim() !== '');
+
+        if (filteredProducts.length === 0) {
+          portfolioGrid.innerHTML = `
+            <div class="empty-state">
+              <i class="fa-regular fa-folder-open"></i>
+              <p>Nenhum produto encontrado nesta categoria</p>
+            </div>
+          `;
+          return;
+        }
+
+        portfolioGrid.innerHTML = filteredProducts.map(product => `
+          <div class="product-card" data-id="${product.id}">
+            <div class="image-container">
+              <img src="${product.imagem}" alt="${product.nome}" class="product-image" onerror="this.src='https://placehold.co/400x400?text=Napau+Design'">
+              <div class="image-overlay">
+                <button class="view-image-btn" data-image="${product.imagem}" data-title="${product.nome}" data-price="${product.preco}" data-id="${product.id}">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">${product.nome}</div>
+              <div class="product-price">${product.preco} MZN</div>
+              <button class="add-cart-btn" data-id="${product.id}">
+                <i class="fa-solid fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        `).join('');
+
+        // Add cart listeners
+        document.querySelectorAll('.add-cart-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = parseInt(btn.dataset.id);
+            if (typeof carrinha !== 'undefined') {
+              carrinha.adicionarItem(id);
+              showToast('<i class="fa-regular fa-circle-check"></i> Adicionado à carrinha');
+            }
+          });
+        });
+
+        // Add view image listeners
+        document.querySelectorAll('.view-image-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const imageSrc = btn.dataset.image;
+            const imageTitle = btn.dataset.title;
+            const imagePrice = btn.dataset.price;
+            const itemId = btn.dataset.id;
+            
+            document.getElementById('modal-image').src = imageSrc;
+            document.getElementById('image-modal-title').textContent = imageTitle;
+            document.getElementById('image-modal-price').textContent = `${imagePrice} MZN`;
+            document.getElementById('modal-add-to-cart').dataset.id = itemId;
+            document.getElementById('image-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+          });
+        });
+
+        // Card click to add to cart
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', (e) => {
+            if (!e.target.closest('.add-cart-btn') && !e.target.closest('.view-image-btn')) {
+              const id = parseInt(card.dataset.id);
+              if (typeof carrinha !== 'undefined') {
+                carrinha.adicionarItem(id);
+                showToast('<i class="fa-regular fa-circle-check"></i> Adicionado à carrinha');
+              }
+            }
+          });
+        });
+      }
+
+      // ===== MODAL ADD TO CART =====
+      const modalAddToCart = document.getElementById('modal-add-to-cart');
+      if (modalAddToCart) {
+        modalAddToCart.addEventListener('click', function() {
+          const itemId = parseInt(this.dataset.id);
+          if (typeof carrinha !== 'undefined') {
+            carrinha.adicionarItem(itemId);
+            showToast('<i class="fa-regular fa-circle-check"></i> Adicionado à carrinha');
+            document.getElementById('image-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+          }
+        });
+      }
+
+      // ===== CLOSE IMAGE MODAL =====
+      const closeImageModal = document.querySelector('.close-modal-image');
+      const modalBackground = document.querySelector('.modal-background');
+      
+      function closeImageModalFunc() {
+        document.getElementById('image-modal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      if (closeImageModal) closeImageModal.addEventListener('click', closeImageModalFunc);
+      if (modalBackground) modalBackground.addEventListener('click', closeImageModalFunc);
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('image-modal').classList.contains('active')) {
+          closeImageModalFunc();
+        }
+      });
+
+      // ===== TOAST FUNCTION =====
+      function showToast(message) {
+        let toast = document.querySelector('.toast');
+        if (toast) toast.remove();
+        toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+      }
+
+      // ===== CART MODAL =====
+      const cartModal = document.getElementById('cart-modal');
+      const cartIconBtn = document.getElementById('cart-icon');
+      const closeModalBtn = document.getElementById('close-modal');
+      
+      if (cartIconBtn && cartModal) {
+        cartIconBtn.addEventListener('click', () => {
+          cartModal.classList.add('active');
+          if (typeof carrinha !== 'undefined' && carrinha.renderizarCarrinha) {
+            carrinha.renderizarCarrinha();
+          }
+        });
+        
+        if (closeModalBtn) {
+          closeModalBtn.addEventListener('click', () => cartModal.classList.remove('active'));
+        }
+        
+        cartModal.addEventListener('click', (e) => {
+          if (e.target === cartModal) cartModal.classList.remove('active');
+        });
+      }
+
+      // ===== URL PARAMETER =====
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoriaParam = urlParams.get('categoria');
+      if (categoriaParam && categorias.some(c => c.id === categoriaParam)) {
+        activeCategory = categoriaParam;
+      }
+
+      // ===== INIT =====
+      renderFilters();
+      renderProducts();
+
+      console.log('✅ Portfólio inicializado - ' + (typeof portfolioCompleto !== 'undefined' ? portfolioCompleto.length + ' produtos' : 'erro ao carregar produtos'));
+    });
+  </script>
+</body>
+</html>
